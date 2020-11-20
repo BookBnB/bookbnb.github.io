@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d614c305-3524-467e-a74a-c3e0de232e04" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/2019-05-28-hola.md" beforeDir="false" afterPath="$PROJECT_DIR$/bitacora/2019-05-28-hola.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/2019-05-29-hello-world.md" beforeDir="false" afterPath="$PROJECT_DIR$/bitacora/2019-05-29-hello-world.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/2019-05-30-welcome.md" beforeDir="false" afterPath="$PROJECT_DIR$/bitacora/2019-05-30-welcome.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/doc1.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/doc2.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/doc3.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/mdx.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebars.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605817605020</updated>
       <workItem from="1605817606146" duration="9183000" />
-      <workItem from="1605831372281" duration="2836000" />
+      <workItem from="1605831372281" duration="3137000" />
     </task>
     <servers />
   </component>

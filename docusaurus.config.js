@@ -12,8 +12,9 @@ module.exports = {
         navbar: {
             title: 'bookBnb Docs',
             logo: {
-                alt: ' ',
+                alt: 'bookBnb Logo',
                 src: 'img/logo.svg',
+                srcDark: 'img/logo.svg'
             },
             items: [
                 {
