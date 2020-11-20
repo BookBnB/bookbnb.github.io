@@ -9,8 +9,25 @@ module.exports = {
     servicios: {
         Servicios: [
             'intro',
-            'app',
-            'core'
+            {
+                type: 'category',
+                label: 'Front-end',
+                collapsed: false,
+                items: [
+                    'app',
+                    'back-office',
+                ],
+            },
+            {
+                type: 'category',
+                label: 'Back-end',
+                collapsed: false,
+                items: [
+                    'core',
+                    'usuarios',
+                    'pagos'
+                ],
+            },
         ],
     },
 };
