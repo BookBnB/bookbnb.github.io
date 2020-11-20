@@ -126,6 +126,7 @@ module.exports = {
                 id: 'bitacora',
                 path: 'bitacora',
                 routeBasePath: 'bitacora',
+                editUrl: 'https://github.com/bookBnB/bookBnB.github.io/edit/doc/',
             },
         ],
     ]
