@@ -1,105 +1,115 @@
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-  themeConfig: {
-    navbar: {
-      title: 'My Site',
-      logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
-      },
-      items: [
-        {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
+    title: 'bookBnB',
+    tagline: 'Documentación de la app bookBnB',
+    url: 'https://bookbnb.github.io',
+    baseUrl: '/',
+    onBrokenLinks: 'throw',
+    onBrokenMarkdownLinks: 'warn',
+    favicon: 'img/favicon.ico',
+    organizationName: 'bookBnB', // Usually your GitHub org/user name.
+    projectName: 'bookbnb.github.io', // Usually your repo name.
+    themeConfig: {
+        navbar: {
+            title: 'bookBnb Docs',
+            logo: {
+                alt: ' ',
+                src: 'img/logo.svg',
+            },
+            items: [
+                {
+                    to: 'servicios/',
+                    activeBasePath: 'servicios',
+                    label: 'Servicios',
+                    position: 'left',
+                },
+                {
+                    to: 'guias/',
+                    activeBasePath: 'guias',
+                    label: 'Guías de usuario',
+                    position: 'left',
+                },
+                {
+                    to: 'bitacora/',
+                    activeBasePath: 'bitacora',
+                    label: 'Bitácora',
+                    position: 'left',
+                },
+                {
+                    to: 'postmortem/',
+                    activeBasePath: 'postmortem',
+                    label: 'Análisis postmortem',
+                    position: 'left',
+                },
+                {
+                    href: 'https://github.com/bookBnB',
+                    label: 'GitHub',
+                    position: 'right',
+                },
+            ],
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
+        footer: {
+            style: 'dark',
+            links: [
+                {
+                    title: 'Enlaces',
+                    items: [
+                        {
+                            label: 'GitHub',
+                            href: 'https://github.com/bookBnB',
+                        },
+                        {
+                            label: 'Enunciado',
+                            href: 'https://taller-de-programacion-2.github.io/2020-10-04-trabajo-practico',
+                        }
+                    ],
+                },
+                {
+                    title: 'Componentes',
+                    items: [
+                        {
+                            label: 'Servicios',
+                            to: 'servicios',
+                        },
+                    ],
+                },
+            ],
+            copyright: `Copyright © ${new Date().getFullYear()} bookBnB. Hecho con Docusaurus.`,
         },
-      ],
     },
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
+    presets: [
+        [
+            '@docusaurus/preset-classic',
             {
-              label: 'Style Guide',
-              to: 'docs/',
+                docs: {
+                    id: 'servicios',
+                    path: 'servicios',
+                    editUrl: 'https://github.com/bookBnB/bookBnB.github.io/edit/doc/',
+                    routeBasePath: 'servicios',
+                    sidebarPath: require.resolve('./servicios/sidebars.js'),
+                },
+                theme: {
+                    customCss: require.resolve('./src/css/custom.css'),
+                },
             },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-    },
-  },
-  presets: [
-    [
-      '@docusaurus/preset-classic',
-      {
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      },
+        ],
     ],
-  ],
+    plugins: [
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'guias',
+                path: 'guias',
+                routeBasePath: 'guias',
+                sidebarPath: require.resolve('./guias/sidebars.js'),
+            },
+        ],
+        [
+            '@docusaurus/plugin-content-blog',
+            {
+                id: 'bitacora',
+                path: 'bitacora',
+                routeBasePath: 'bitacora',
+            },
+        ],
+    ]
 };
