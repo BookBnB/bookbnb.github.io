@@ -18,6 +18,12 @@ module.exports = {
             },
             items: [
                 {
+                    to: 'requisitos/',
+                    activeBasePath: 'requisitos',
+                    label: 'Requistos',
+                    position: 'left',
+                },
+                {
                     to: 'servicios/',
                     activeBasePath: 'servicios',
                     label: 'Servicios',
