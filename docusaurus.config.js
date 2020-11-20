@@ -96,11 +96,19 @@ module.exports = {
     ],
     plugins: [
         [
+            '@docusaurus/plugin-ideal-image',
+            {
+                min: 640, // min resized image's size. if original is lower, use that size.
+                steps: 2, // the max number of images generated between min and max (inclusive)
+            },
+        ],
+        [
             '@docusaurus/plugin-content-docs',
             {
                 id: 'guias',
                 path: 'guias',
                 routeBasePath: 'guias',
+                editUrl: 'https://github.com/bookBnB/bookBnB.github.io/edit/doc/',
                 sidebarPath: require.resolve('./guias/sidebars.js'),
             },
         ],

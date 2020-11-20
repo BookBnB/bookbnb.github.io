@@ -13,11 +13,15 @@
   },
   "dependencies": {
     "@docusaurus/core": "2.0.0-alpha.68",
+    "@docusaurus/plugin-ideal-image": "^2.0.0-alpha.68",
     "@docusaurus/preset-classic": "2.0.0-alpha.68",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
+    "medium-zoom": "^1.0.6",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "react-image-magnify": "^2.7.4",
+    "react-medium-image-zoom": "^3.1.2"
   },
   "browserslist": {
     "production": [
