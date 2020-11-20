@@ -105,6 +105,14 @@ module.exports = {
             },
         ],
         [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'postmortem',
+                path: 'postmortem',
+                routeBasePath: 'postmortem'
+            },
+        ],
+        [
             '@docusaurus/plugin-content-blog',
             {
                 id: 'bitacora',
