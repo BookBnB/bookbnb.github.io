@@ -1,0 +1,82 @@
+---
+id: core
+title: Core
+---
+
+Este es el servicio principal de Back-End de bookBnB. Contiene la lógica principal de negocio para la mayor parte de las funciones. 
+
+
+## Instalación
+
+Dado que la aplicación se encuentra dockerizada la instalación es tan sencilla como:
+
+```bash
+$ git clone git@github.com:BookBnB/core.git
+$ cd core
+$ docker-compose up -d
+```
+
+Luego para conectarse a la app:
+
+```bash
+$ docker-compose exec app bash
+```
+
+### Imagen
+
+Para crear una imagen de docker con el estado actual de la apliación se debe ejecutar:
+
+```bash
+$ docker/build_production_image.sh
+```
+
+Esto creará una imagen con el tag `bookbnb`.
+
+
+### Build
+
+Para compilar la aplicación:
+
+```bash
+$ npm run build             # one time
+$ npm run build:watch       # fast recompile on file changes
+```
+
+### Tests
+
+Para ejecutar los tests:
+
+```bash
+$ npm run test			    # all tests, no coverage
+$ npm run test:unit		    # unit tests only
+$ npm run test:acceptance   # acceptance tests only
+$ npm run test:coverage	    # all tests, with coverage
+```
+
+
+## Configuración
+
+Se deben configurar las siguientes variables de ambiente:
+
+| variable                  | descripción                           |
+|----------                 |-------------                          |
+| ALGOLIA_ADMIN_API_KEY     | Api key de Algolia                    |
+| ALGOLIA_APPLICATION_ID    | Id de aplicación en Algolia           |
+| BACKOFFICE_URL            | Url del front-end del backoffice      |
+| USERS_SERVICE_URL         | Url del servicio de usuarios          |
+| DATABASE_URL              | Url de conexión a la base de datos    |
+| NODE_ENV                  | Ambiente en el que se encuentra       |
+| SECRET_KEY                | Clave random para generar tokens      |
+
+## Arquitectura
+
+Este microservicio utiliza una [arquitectura hexagonal](https://alistair.cockburn.us/hexagonal-architecture/) para mantener desacoplada la lógica de negocio con el resto de las conexiones del servicio.
+
+
+## OpenApi
+
+Puede consultarse la especificación OpenApi en [api.json](https://bookbnb-master.herokuapp.com/v1/api.json) o utilizando swagger en [api-docs](https://bookbnb-master.herokuapp.com/v1/api-docs).
+
+<iframe src="https://bookbnb-master.herokuapp.com/v1/api-docs" frameBorder="0" allowFullScreen
+        style={{width: '100%', height: '500px'}}/>
+

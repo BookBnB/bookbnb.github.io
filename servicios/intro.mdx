@@ -1,0 +1,22 @@
+---
+id: intro
+title: Introducción
+slug: /
+---
+import baseUrl from '@docusaurus/useBaseUrl'
+
+Las siguientes secciones muestran documentación técnica de cada uno de los componentes del sistema. En general cada servicio define:
+ - Instalación y configuración
+ - Definición de arquitectura
+ - Especificación de API REST (OpenApi) para los servicios de back-end.
+
+A su vez todos los repositorios de código se encuentran en [github.com/bookBnB](https://github.com/bookBnB/).
+
+
+## Arquitectura
+
+Los componentes del sistema interactúan de la siguiente forma:
+
+<img alt="Arquitectura" src={baseUrl('img/servicios/Arquitectura.png')} style={{margin: '15px auto', display: 'flex'}}/>
+
+Para algunas funciones el servicio Core delega en los otros dos microservicios (Usuarios y Pagos) y también algunos componentes interactúan con servicios externos como Google Firebase y Algolia. A su vez cada microservicio tiene su propia base de datos que no se muestra en el diagrama por claridad.
