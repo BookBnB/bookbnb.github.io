@@ -18,9 +18,9 @@ module.exports = {
             },
             items: [
                 {
-                    to: 'requisitos/',
-                    activeBasePath: 'requisitos',
-                    label: 'Requistos',
+                    to: 'analisis/',
+                    activeBasePath: 'analisis',
+                    label: 'Análisis',
                     position: 'left',
                 },
                 {
