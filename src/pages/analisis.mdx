@@ -7,6 +7,10 @@ import baseUrl from '@docusaurus/useBaseUrl'
 
 # Análisis de requisitos
 
+En esta sección detallamos las técnicas y herramientas utilizadas para comprender mejor el sistema que se debía construir.
+
+### User Story Map
+
 Dado que el [enunciado](https://taller-de-programacion-2.github.io/2020-10-04-trabajo-practico/) no resultaba muy claro en varios aspectos fue necesario realizar un análisis más profundo de los requisitos del sistema. Para ello utilizamos la técnica de [User Story Mapping](https://www.scrum.org/resources/blog/como-hacer-un-user-story-mapping) para comprender y especificar requisitos. De esta manera generamos el siguiente mapa:
 
 <iframe src="https://bookbnb.storiesonboard.com/m/c-hCbMgGu0OYAoSV3HM45w" frameBorder="0" allowFullScreen
@@ -14,6 +18,19 @@ Dado que el [enunciado](https://taller-de-programacion-2.github.io/2020-10-04-tr
 
 Este nos permitió visualizar gráficamente las historias de usuario a completar facilitando su comprensión y relación entre ellas. A partir de este construimos un gráfico para ver las dependencias entre módulos:
 
-<img alt="Dependencias" src={baseUrl('img/analisis/Dependencias.png')} style={{margin: 'auto', display: 'flex'}}/>
+<img alt="Dependencias" src={baseUrl('img/analisis/Dependencias.png')} style={{margin: '15px auto', display: 'flex'}}/>
 
 Este último resulto particularmente útil a la hora de priorizar las historias a desarrollar con el objetivo de minimizar las dependencias entre historias dentro de una iteración.
+
+
+### Prototipado
+
+Para validar rápidamente lo que se iba a construir durante las iteraciones realizamos prototipos de las distintas funcionalidades del sistema. Para ello escogimos la herramienta [Balsamiq](https://balsamiq.com/) que nos permitió colaborar en la construcción de los prototipos de forma online:
+
+<img alt="Prototipo home" src="https://share.balsamiq.com/g/exVDCkkz9kkiejT6bKssvM.png" style={{margin: '15px auto', display: 'flex'}}/>
+
+Esto resultó particularmente útil a la hora de validar las partes más complejas del sistema, donde un error en la comprensión del problema podría llegar a resultar bastante costoso:
+
+<img alt="Prototipo reservas" src="https://share.balsamiq.com/g/pLZX9EwJCEKCAxcvGqjR1C.png" style={{margin: '15px auto', display: 'flex'}}/>
+
+Los otros prototipos pueden consultarse en el [proyecto Balsamiq](https://drive.google.com/file/d/1O-LUuy7DgqDc9DJCaq1L3u9cbBKi0PsV/view?usp=sharing).
