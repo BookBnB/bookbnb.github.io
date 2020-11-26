@@ -3,8 +3,19 @@ id: core
 title: Core
 ---
 
+[![Build Status](https://travis-ci.com/BookBnB/core.svg?branch=master)](https://travis-ci.com/BookBnB/core)
+[![codecov](https://codecov.io/gh/BookBnB/core/branch/master/graph/badge.svg?token=3HYQW6VBPY)](https://codecov.io/gh/BookBnB/core)
+[![Heroku](https://img.shields.io/badge/heroku-master-success.svg?l?style=flat&logo=heroku&logoColor=white&labelColor=494998)](https://bookbnb-master.herokuapp.com/)
+[![Heroku](https://img.shields.io/badge/heroku-develop-success.svg?l?style=flat&logo=heroku&logoColor=white&labelColor=494998)](https://bookbnb-develop.herokuapp.com/)
+
 Este es el servicio principal de Back-End de bookBnB. Contiene la lógica principal de negocio para la mayor parte de las funciones. 
 
+## Ambientes
+
+Se encuentra desplegado en un ambiente productivo y otro interno del equipo de desarrollo para testing:
+
+- [Producción](https://bookbnb-master.herokuapp.com/)
+- [Desarrollo](https://bookbnb-develop.herokuapp.com/)
 
 ## Instalación
 
@@ -68,10 +79,15 @@ Se deben configurar las siguientes variables de ambiente:
 | NODE_ENV                  | Ambiente en el que se encuentra       |
 | SECRET_KEY                | Clave random para generar tokens      |
 
+## Cobertura
+
+El proyecto fue testeado con pruebas unitarias y de integración utilizando [Gherkin](https://cucumber.io/docs/gherkin/) logrando una cobertura mayor al 90%. Se puede ver el detalle de los reportes en [codecov](https://codecov.io/gh/BookBnB/core).
+
+<img alt="Arquitectura" src="https://codecov.io/gh/BookBnB/core/branch/develop/graph/sunburst.svg" style={{margin: '15px auto', display: 'flex'}}/>
+
 ## Arquitectura
 
 Este microservicio utiliza una [arquitectura hexagonal](https://alistair.cockburn.us/hexagonal-architecture/) para mantener desacoplada la lógica de negocio con el resto de las conexiones del servicio.
-
 
 ## OpenApi
 
