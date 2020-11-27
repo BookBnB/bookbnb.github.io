@@ -14,8 +14,8 @@ Este es el servicio principal de Back-End de bookBnB. Contiene la lógica princi
 
 Se encuentra desplegado en un ambiente productivo y otro interno del equipo de desarrollo para testing:
 
-- [Producción](https://bookbnb-master.herokuapp.com/)
-- [Desarrollo](https://bookbnb-develop.herokuapp.com/)
+- [Producción](https://bookbnb-master.herokuapp.com/) con delívery continuo a partir de la rama [master](https://github.com/BookBnB/core/tree/master).
+- [Desarrollo](https://bookbnb-develop.herokuapp.com/) con delívery continuo a partir de la rama [develop](https://github.com/BookBnB/core/tree/develop).
 
 ## Instalación
 
@@ -41,8 +41,17 @@ Para crear una imagen de docker con el estado actual de la aplicación se debe e
 $ docker/build_production_image.sh
 ```
 
-Esto creará una imagen con el tag `bookbnb`.
+Esto creará una imagen con el tag `bookbnb:latest`.
 
+### Despligue
+
+Luego para desplegar la imagen en Heroku:
+
+```bash
+$ docker/heroku_push.sh
+```
+
+Es necesario que para ello se encuentre configurada la variable de ambiente `$TRAVIS_BRANCH` indicando la rama que se desea desplegar.
 
 ### Build
 
