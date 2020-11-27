@@ -84,6 +84,31 @@ module.exports = {
                         },
                     ],
                 },
+                {
+                    title: 'Docs',
+                    items: [
+                        {
+                            label: 'Análisis',
+                            to: 'analisis',
+                        },
+                        {
+                            label: 'Servicios',
+                            to: 'servicios',
+                        },
+                        {
+                            label: 'Guías de usuario',
+                            to: 'guias',
+                        },
+                        {
+                            label: 'Bitácora',
+                            to: 'bitacora',
+                        },
+                        {
+                            label: 'Análisis postmortem',
+                            to: 'postmortem',
+                        },
+                    ],
+                },
             ],
             copyright: `Copyright © ${new Date().getFullYear()} bookBnB. Hecho con Docusaurus.`,
         },
