@@ -1,0 +1,38 @@
+---
+slug: tecnologias-back
+title: Tecnologías del Back-end
+author: Seblaz
+author_url: https://github.com/seblaz
+author_image_url: https://avatars3.githubusercontent.com/u/19474368?s=460&=04b3d3d551094a7c62c6cf3aa30653f56bb2d60c&v=4
+tags: [node, tecnologias, python]
+---
+
+## Microservicios
+
+Luego de nuestra propuesta inicial sobre la arquitectura a utilizar y la charla con Gonzalo decidimos desarrollar los siguientes microservicios:
+
+- [Usuarios](https://github.com/BookBnB/users-service): para manejar la autenticación de los usuarios de la aplicación y los del back-end
+- [Pagos](https://github.com/BookBnB/payments-service): para manejar la interacción con el Smart Contract.
+- [Core](https://github.com/BookBnB/core): con la lógica de negocio principal de la aplicación.
+
+## Tecnlogías
+
+En principio era un requisito desarrollar los microservicios Back-end con Python y Node.js. Dado que la mayor parte del equipo se encontraba más familiarizado con Node.js, decidimos que el microservicio principal (Core) se desarrolle en dicho lenguaje.
+
+A su vez [@M-Picco](https://github.com/M-Picco) tenía una buena experiencia utilizando Smart Contracts en Node.js, con lo cual también decidimos que el microservicio de Pagos sea en dicho Lenguaje.
+
+Por último, para cumplir con los requisitos propuestos resolvimos desarrollar el servicio de Usuarios en Python.
+
+## Frameworks
+
+### Node.js
+
+En principio decidimos armar un template en Node.js para utilizarlo en ambos microservicios (Core y Pagos). Para ello determinamos utilizar [TypeScript](https://www.typescriptlang.org/) dado que nos proporciona un chequeo estático de tipos en tiempo de compilación atrapando algunos errores comunes al programar. Luego para el protocolo HTTP utilizamos un framework simple como [Express.js](https://expressjs.com) lo que nos permite implementar una [arquitectura hexagonal](https://alistair.cockburn.us/hexagonal-architecture/) fácilmente.
+
+Por otro lado, para facilitar la conexión con la base de datos investigamos varios ORMs y finalmente nos decidimos por [TypeORM](https://typeorm.io/#/) dado que es el framework que menos ensucia las entidades del modelo de dominio con cuestiones de la base de datos.
+
+Finalmente, para crear los controladores utilizamos la biblioteca [routing-controllers](https://www.npmjs.com/package/routing-controllers) que en conjunto con [routing-controllers-openapi](routing-controllers-openapi) nos permitió generar de forma automatizada la especificación OpenApi.
+
+### Python
+
+Dado que el microservicio a desarrollar era relativamente pequeño optamos por un framework sencillo como [Flask](https://flask.palletsprojects.com/) en lugar de otros más complejos como [Django](https://www.djangoproject.com/).

@@ -48,6 +48,11 @@ module.exports = {
                     position: 'left',
                 },
                 {
+                    to: 'equipo/',
+                    label: 'Equipo',
+                    position: 'right',
+                },
+                {
                     href: 'https://github.com/bookBnB',
                     label: 'GitHub',
                     position: 'right',
@@ -71,11 +76,11 @@ module.exports = {
                     ],
                 },
                 {
-                    title: 'Componentes',
+                    title: 'Personas',
                     items: [
                         {
-                            label: 'Servicios',
-                            to: 'servicios',
+                            label: 'Equipo',
+                            to: 'equipo',
                         },
                     ],
                 },
