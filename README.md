@@ -1,5 +1,7 @@
 # Website
 
+[![build](https://github.com/BookBnB/bookbnb.github.io/workflows/build/badge.svg)](https://github.com/BookBnB/bookbnb.github.io/actions?query=workflow%3Abuild)
+
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
 ## Installation
