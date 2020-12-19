@@ -1,7 +1,7 @@
 name: build
 on: [ push, pull_request ]
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-20.04
     container: node:12.20.0
     steps:
@@ -16,16 +16,9 @@ jobs:
         run: npm install
       - name: Build site
         run: npm run build
-
-  deploy:
-    runs-on: ubuntu-20.04
-    needs: test
-    if: contains('refs/heads/doc', github.ref)
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v1
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
+          publish_branch: main
