@@ -5,13 +5,13 @@ jobs:
     runs-on: ubuntu-20.04
     container: node:12.20.0
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
       - name: Cache node dependencies
         uses: actions/cache@v2
         with:
           path: node_modules
           key: ${{ runner.os }}-node-dependencies
-      - name: Checkout code
-        uses: actions/checkout@v1
       - name: Install dependencies
         run: npm install
       - name: Build site
