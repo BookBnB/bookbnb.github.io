@@ -2,6 +2,7 @@
 id: app
 title: Aplicación
 ---
+import baseUrl from '@docusaurus/useBaseUrl'
 
 La aplicación fue desarrollada de manera nativa en Kotlin utilizando como entorno [Android Studio](https://developer.android.com/studio) con el soporte de la herramienta [Gradle](https://gradle.org/).
 
