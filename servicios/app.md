@@ -23,4 +23,6 @@ Se utilizó una arquitectura [MVVM](https://es.wikipedia.org/wiki/Modelo%E2%80%9
 
 ## Distribución
 
-Para la distribución utilizamos una herramienta provista por Firebase llamada [App Distribution](https://firebase.google.com/docs/app-distribution) que nos permite realizar un build de un APK, seleccionar un grupo de "testers" y subirlo sin necesidad de una cuenta paga. El último APK generado puede encontrarse [aquí]() y es el mismo que se encuentra en dicha herramienta.
+Para la distribución utilizamos una herramienta provista por Firebase llamada [App Distribution](https://firebase.google.com/docs/app-distribution) que nos permite realizar un build de un APK, seleccionar un grupo de "testers" y subirlo sin necesidad de una cuenta paga. El último APK generado puede encontrarse [aquí](https://github.com/BookBnB/bookbnb.github.io/raw/doc/static/bookbnb.apk) y es el mismo que se encuentra en dicha herramienta.
+
+La única contra es que para su instalación en un dispositivo se debe habilitar la opción en Android para permitir instalaciones de fuentes desconocidas.
