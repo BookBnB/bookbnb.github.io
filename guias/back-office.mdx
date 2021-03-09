@@ -1,0 +1,153 @@
+---
+id: back-office
+title: Guía de usuario del Back Office
+sidebar_label: Back Office
+---
+
+import baseUrl from '@docusaurus/useBaseUrl'
+
+### Introducción
+
+El Back Office es el sitio al que solamente pueden acceder los administradores, 
+para realizar operaciones sobre usuarios, publicaciones y servidores almacenados en el sistema.
+
+Inicialmente se creó un superusuario con rol admin consumiendo la API de registro de usuarios.
+Este usuario fue creado con mail franco@admin.com y contraseña bookbnb2020.
+Esto se realizó de esta forma, ya que los administradores son los únicos que pueden registrar otros administradores;
+es decir, los administradores NO se pueden registrar a sí mismos.
+
+### Login
+
+Es la primer página con la que se encuentra el usuario cuando ingresa al Back Office.
+
+<img alt="Backoffice Login" src={baseUrl('img/guias/backoffice/login.png')} />
+
+El usuario es el mail con el que fue registrado dicho administrador, y la contraseña es, en todos los casos, bookbnb2020.
+
+Cuando el administrador ingresa mal su mail y/o contraseña (no coinciden con datos de la base, el rol no es de un administrador, o errores internos)
+se mostrará en pantalla el mensaje correspondiente. Si el login es exitoso, se mostrará un mensaje de alerta indicándolo y se procederá a acceder a la home.
+
+Al loguearse satisfactoriamente se genera un jwt, que se almacenará en las cookies y será válido durante 24 horas. Si pasadas estas 24 horas el usuario
+quiere acceder a alguna sección cualquiera, se redirigirá automáticamente a la home. De la misma forma, si antes de las 24 horas el usuario quiere ingresar desde un mismo browser,
+se accederá directamente a la página de la home, por más que la ruta sea la de login.
+
+### Home
+
+La pantalla correspondiente a la home es la siguiente
+
+<img alt="Backoffice Home" src={baseUrl('img/guias/backoffice/home.png')} />
+
+Se puede observar en la parte superior que hay cinco posibles opciones a ingresar:
+Registro Administradores, Usuarios, Publicaciones, Servidores y Métricas
+
+Además, en la parte inferior derecha de la pantalla hay un botón para cerrar sesión.
+Al hacer click en este botón, se mostrará un mensaje de confirmación
+
+<img alt="Backoffice Cerrar Sesión" src={baseUrl('img/guias/backoffice/close-session.png')} />
+
+Y al aceptar dicho mensaje, se retornará a la pantalla de login.
+
+Ahora pasaremos a analizar cada una de las secciones del BO.
+
+### Registro Administradores
+
+La pantalla correspondiente a esta sección es la siguiente.
+
+<img alt="Backoffice Registro" src={baseUrl('img/guias/backoffice/registro-admins.png')} />
+
+Como se puede observar, para registrar un administrador nos piden el nombre, apellido y mail como campos obligatorios,
+y la ciudad y teléfono como campos opcionales (al igual que en la app).
+
+Si alguno de los campos obligatorios permanece vacío se mostrará un mensaje indicando eso.
+
+Cuando todos los campos se completan satisfactoriamente, y el servidor no arroja ningún error, el administrador se crea en la base
+pudiendo ingresar al BO con el mail como nombre de usuario y la contraseña por defecto bookbnb2020.
+
+### Usuarios
+
+Al acceder a esta sección, se mostrará una lista de todos los usuarios registrados en el sistema, sean del rol que sean.
+
+<img alt="Backoffice Usuarios" src={baseUrl('img/guias/backoffice/usuarios.png')} />
+
+En la lista se mostrará, para cada usuario, el nombre, el rol y tres opciones posibles: ver pefil, bloquear usuario y cargar saldo.
+
+Al querer ver el perfil de un usuario, se mostrará un modal con todos los datos del usuario registrados en el sistema.
+
+<img alt="Backoffice Perfil Usuario" src={baseUrl('img/guias/backoffice/perfil-usuario.png')} />
+
+Al querer cargar saldo en la billetera, se mostrará un modal con la dirección de la billetera de dicho usuario, para que se le pueda cargar saldo desde afuera.
+
+<img alt="Backoffice Billetera" src={baseUrl('img/guias/backoffice/billetera.png')} />
+
+Por último, al querer bloquear un usuario, se mostrará un modal de confirmación para bloquear al usuario.
+
+<img alt="Backoffice Bloquear usuario" src={baseUrl('img/guias/backoffice/bloquear-usuario.png')} />
+
+Si se confirma el bloqueo, se manda un request a la base para que dicho usuario no pueda iniciar sesión.
+Por su parte, al refrescar la página, desaparecerá la opción para bloquear a ese usuario, y será reemplazada por la opción
+Desbloquear Usuario, que tendrá el efecto inverso. Al hacer click en esa nueva opción, automáticamente se desbloqueará al usuario anteriormente bloqueado.
+
+### Publicaciones
+
+Al acceder a la sección de publicaciones, inicialmente se mostrará una lista con todas las publicaciones registradas en la base.
+De cada publicación se muestra el estado entre brackets (creada, pendiente de creación o rechazada), el nombre, el anfitrión que la creó
+y dos opciones posibles: Ver reservas asociadas y Bloquear publicación.
+
+<img alt="Backoffice Publicaciones" src={baseUrl('img/guias/backoffice/publicaciones.png')} />
+
+Al querer ver las reservas asociadas a una publicación, se abrirá un modal con los datos de dichas reservas.
+De cada reserva se mostrará el id, el período y una opción para ver las transacciones de dicha reserva.
+
+<img alt="Backoffice Reservas" src={baseUrl('img/guias/backoffice/reservas-asociadas.png')} />
+
+Al querer ver las transacciones para una reserva dada, se abrirá un nuevo modal con los datos de dichas transacciones.
+De las transacciones se mostrará el tipo de transacción, el autor de la misma, la dirección de la billetera, la fecha en la que
+se realizó dicha transacción, el id de la reserva, y si la transacción fue exitosa o no.
+
+<img alt="Backoffice Transacciones" src={baseUrl('img/guias/backoffice/transacciones.png')} />
+
+Por otro lado, al querer bloquear una publicación, el procedimiento es similar al del bloqueo de usuarios.
+Se mostrará un modal de confirmación.
+
+<img alt="Backoffice Bloquear Publicacion" src={baseUrl('img/guias/backoffice/bloquear-publicacion.png')} />
+
+Si se confirma el bloqueo, se manda un request a la base para que dicha publicación no sea enviada a los huespedes para poder verla
+(pero si a los administradores).
+Al bloquear la publicación, se cambiará la opción de bloqueo por una opción de desbloqueo, la cual volverá a habilitar la publicación a los huespedes.
+
+### Servidores
+
+Al acceder a la sección de servidores, se mostrará una lista de todos los servidores registrados en la base,
+indicando el nombre del mismo, el tipo (si es de pagos o de usuarios) y el hash. Además, en la parte superior hay una opción
+para poder agregar un nuevo servidor.
+
+<img alt="Backoffice Servidores" src={baseUrl('img/guias/backoffice/servidores.png')} />
+
+Al querer agregar un nuevo servidor, se abrirá un modal en el cual se permitirá seleccionar el tipo del servidor a agregar (pagos o usuarios) y
+el nombre, ambos campos obligatorios.
+
+<img alt="Backoffice Agregar Servidor" src={baseUrl('img/guias/backoffice/agregar-servidor.png')} />
+
+### Métricas
+
+Por último, al acceder a la sección de métricas, se permitirá ingresar el tipo de métrica a mostrar (cantidad de publicaciones por día,
+cantidad de reservas creadas por día o cantidad de reservas activas por día), y el rango de fechas para el cual se quiere observar los resultados.
+
+<img alt="Backoffice Metricas" src={baseUrl('img/guias/backoffice/metricas.png')} />
+
+La métrica correspondiente a cantidad de publicaciones creadas por día mostrará un gráfico de líneas en el cual se mostrará para el rango indicado (en caso de que haya sido ingresado)
+la cantidad de publicaciones creadas en cada día (incluyendo los días que no tuvieron ninguna publicacion creada).
+En caso de que no haya sido ingresado un rango, el rango se definirá automáticamente desde el día más antiguo al más reciente para el cual hay al menos una publicación creada.
+
+<img alt="Backoffice Metricas Publicaciones" src={baseUrl('img/guias/backoffice/metricas-publicaciones-por-dia.png')} />
+
+La métrica correspondiente a cantidad de reservas creadas por día mostrará también un gráfico de líneas en el cual se mostrará para el rango indicado (en caso de que haya sido ingresado)
+la cantidad de reservas creadas en cada día (incluyendo los días que no tuvieron ninguna reserva creada).
+En caso de que no haya sido ingresado un rango, el rango se definirá automáticamente desde el día más antiguo al más reciente para el cual hay al menos una reserva creada.
+
+<img alt="Backoffice Metricas Reservas Creadas" src={baseUrl('img/guias/backoffice/metricas-reservas-creadas-por-dia.png')} />
+
+La métrica correspondiente a cantidad de reservas activas por día mostrará otro gráfico de líneas el cual indicará para el rango indicado (en este caso obligatorio)
+la cantidad de reservas que están activas en cada día (incluyendo los días que no tuvieron ninguna reserva activa).
+
+<img alt="Backoffice Metricas Reservas Activas" src={baseUrl('img/guias/backoffice/metricas-reservas-activas-por-dia.png')} />
