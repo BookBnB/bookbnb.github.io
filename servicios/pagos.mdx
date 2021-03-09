@@ -1,0 +1,106 @@
+---
+id: pagos
+title: Pagos
+---
+
+[![Build Status](https://travis-ci.com/BookBnB/payments-service.svg?branch=master)](https://travis-ci.com/BookBnB/payments-service)
+[![codecov](https://codecov.io/gh/BookBnB/payments-service/branch/master/graph/badge.svg?token=3HYQW6VBPY)](https://codecov.io/gh/BookBnB/payments-service)
+[![Heroku](https://img.shields.io/badge/heroku-master-success.svg?l?style=flat&logo=heroku&logoColor=white&labelColor=494998)](https://payments-service-master.herokuapp.com/)
+[![Heroku](https://img.shields.io/badge/heroku-develop-success.svg?l?style=flat&logo=heroku&logoColor=white&labelColor=494998)](https://payments-service-develop.herokuapp.com/)
+
+Este es el servicio de pagos de Back-End de bookBnB. Nuclea aquellas funcionalidades vinculadas a las interacciones y pagos con el contrato inteligente desplegado en la blockchain Ethereum.
+
+## Ambientes
+
+Se encuentra desplegado en un ambiente productivo y otro interno del equipo de desarrollo para testing:
+
+- [Producción](https://payments-service-master.herokuapp.com/) con delívery continuo a partir de la rama [master](https://github.com/BookBnB/payments-service/tree/master).
+- [Desarrollo](https://payments-service-develop.herokuapp.com/) con delívery continuo a partir de la rama [develop](https://github.com/BookBnB/payments-service/tree/develop).
+
+## Instalación
+
+Dado que la aplicación se encuentra dockerizada la instalación es tan sencilla como:
+
+```bash
+$ git clone git@github.com:BookBnB/payments-service.git
+$ cd payments-service
+$ docker-compose up -d
+```
+
+Luego para conectarse a la app:
+
+```bash
+$ docker-compose exec app bash
+```
+
+### Imagen
+
+Para crear una imagen de docker con el estado actual de la aplicación se debe ejecutar:
+
+```bash
+$ docker/build_production_image.sh
+```
+
+Esto creará una imagen con el tag `payments-service:latest`.
+
+### Despligue
+
+Luego para desplegar la imagen en Heroku:
+
+```bash
+$ docker/heroku_push.sh
+```
+
+Es necesario que para ello se encuentre configurada la variable de ambiente `$TRAVIS_BRANCH` indicando la rama que se desea desplegar.
+
+### Build
+
+Para compilar la aplicación:
+
+```bash
+$ npm run build             # one time
+$ npm run build:watch       # fast recompile on file changes
+```
+
+### Tests
+
+Para ejecutar los tests:
+
+```bash
+$ npm run test			    # all tests, no coverage
+$ npm run test:unit		    # unit tests only
+$ npm run test:acceptance   # acceptance tests only
+$ npm run test:coverage	    # all tests, with coverage
+```
+
+
+## Configuración
+
+Se deben configurar las siguientes variables de ambiente:
+
+| variable                  | descripción                           |
+|----------                 |-------------                          |
+| CORE_URL                  | Url del servicio principal            |
+| DATABASE_URL              | Url de conexión a la base de datos    |
+| NODE_ENV                  | Ambiente en el que se encuentra       |
+| NODE_URL                  | Url del nodo Ethereum                 |
+| CONTRACT_ADDRESS          | Dirección del Smart Contract          |
+| BACKOFFICE_URL            | Url del front-end del backoffice      |
+
+## Cobertura
+
+El proyecto fue testeado con pruebas unitarias y de integración utilizando [Gherkin](https://cucumber.io/docs/gherkin/) logrando una cobertura mayor al 90%. Se puede ver el detalle de los reportes en [codecov](https://codecov.io/gh/BookBnB/payments-service).
+
+<img alt="Arquitectura" src="https://codecov.io/gh/BookBnB/payments-service/branch/develop/graph/sunburst.svg" style={{margin: '15px auto', display: 'flex'}}/>
+
+## Arquitectura
+
+Este microservicio utiliza una [arquitectura hexagonal](https://alistair.cockburn.us/hexagonal-architecture/) para mantener desacoplada la lógica de negocio con el resto de las conexiones del servicio.
+
+## OpenApi
+
+Puede consultarse la especificación OpenApi en [api.json](https://payments-service-master.herokuapp.com/v1/api.json) o utilizando swagger en [api-docs](https://payments-service-master.herokuapp.com/v1/api-docs).
+
+<iframe src="https://payments-service-master.herokuapp.com/v1/api-docs" frameBorder="0" allowFullScreen
+        style={{width: '100%', height: '500px'}}/>
+
