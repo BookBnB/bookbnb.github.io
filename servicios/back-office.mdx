@@ -3,4 +3,42 @@ id: back-office
 title: Back Office
 ---
 
-Algo sobre el Back Office
+El BackOffice fue desarrollado con React, e integrando librerías muy útiles.
+
+Algunas de estas librerías son:
+
+- Material-ui: provee componentes predefinidos con estilos para varios elementos que fueron utilizados.
+Entre estos elementos se encuentran: inputs, mensajes de error en inputs, modales, header, botones, dropdowns, etc)
+
+- Recharts: provee componentes para realizar gráficos. Fue utilizado para la sección de métricas
+
+## Instalación
+
+Al igual que los servicios backend, el BO también está dockerizado, por lo que para instalarlo se deben ejecutar
+los siguientes comandos:
+
+```bash
+$ git clone git@github.com:BookBnB/react-app.git
+$ docker-compose up -d
+```
+
+## Ambientes
+
+El Back Office está desplegado tanto en heroku como en okteto.
+
+En heroku, se configuró travis para que haya, a su vez, dos ambientes diferentes:
+- Master (apuntando al branch master del repositorio): https://bookbnb-react-master.herokuapp.com/
+- Develop (apuntando al branch develop del repositorio): https://bookbnb-react-develop.herokuapp.com/
+
+En okteto, fue desplegado configurándolo para que apunte al último commit realizado, sea de master o de develop.
+La url es: https://bookbnb-frontend-service-seblaz.cloud.okteto.net
+
+## Arquitectura e implementación
+
+A continuación se destacan algunos puntos importantes en cuanto a la arquitectura e implementación:
+- Se utilizó la api fetch para realizar requests al backend
+- Se utilizó un router para redirigir una ruta en particular al componente correspondiente. A su vez,
+también se agregó un componente de redirección, para que si el token jwt no expiró redirija automáticamente
+a la Home, así como también que redirija al login en caso de que el token expire y el admin quiera realizar alguna acción
+- Cada sección se realizó en un componente diferente, así como también cada subsección (info de un usuario, info de una publicación),
+de forma tal que el componente pueda ser reutilizado
