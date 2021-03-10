@@ -24,14 +24,10 @@ $ docker-compose up -d
 
 ## Ambientes
 
-El Back Office está desplegado tanto en heroku como en okteto.
+El Back Office se encuentra desplegado en un ambiente productivo y otro interno del equipo de desarrollo:
 
-En heroku, se configuró travis para que haya, a su vez, dos ambientes diferentes:
-- Master (apuntando al branch master del repositorio): https://bookbnb-react-master.herokuapp.com/
-- Develop (apuntando al branch develop del repositorio): https://bookbnb-react-develop.herokuapp.com/
-
-En okteto, fue desplegado configurándolo para que apunte al último commit realizado, sea de master o de develop.
-La url es: https://bookbnb-frontend-service-seblaz.cloud.okteto.net
+- [Producción](https://bookbnb-react-master.herokuapp.com/) con delívery continuo a partir de la rama [master](https://github.com/BookBnB/react-app/tree/master).
+- [Desarrollo](https://bookbnb-react-develop.herokuapp.com/) con delívery continuo a partir de la rama [develop](https://github.com/BookBnB/react-app/tree/develop).
 
 ## Arquitectura e implementación
 
