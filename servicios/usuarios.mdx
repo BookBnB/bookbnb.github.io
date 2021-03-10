@@ -1,0 +1,101 @@
+---
+id: usuarios
+title: Usuarios
+---
+
+[![Build Status](https://travis-ci.com/BookBnB/users-service.svg?branch=master)](https://travis-ci.com/BookBnB/users-service)
+[![codecov](https://codecov.io/gh/BookBnB/users-service/branch/master/graph/badge.svg?token=3HYQW6VBPY)](https://codecov.io/gh/BookBnB/users-service)
+[![Heroku](https://img.shields.io/badge/heroku-master-success.svg?l?style=flat&logo=heroku&logoColor=white&labelColor=494998)](https://users-service-master.herokuapp.com/)
+[![Heroku](https://img.shields.io/badge/heroku-develop-success.svg?l?style=flat&logo=heroku&logoColor=white&labelColor=494998)](https://users-service-develop.herokuapp.com/)
+
+Este es el servicio de usuarios de Back-End de bookBnB. Contiene la lógica vinculada a la administración y autenticación de usuarios.
+
+## Ambientes
+
+Se encuentra desplegado en un ambiente productivo y otro interno del equipo de desarrollo para testing:
+
+- [Producción](https://users-service-master.herokuapp.com/) con delívery continuo a partir de la rama [master](https://github.com/BookBnB/users-service/tree/master).
+- [Desarrollo](https://users-service-develop.herokuapp.com/) con delívery continuo a partir de la rama [develop](https://github.com/BookBnB/users-service/tree/develop).
+
+## Instalación
+
+Dado que la aplicación se encuentra dockerizada la instalación es tan sencilla como:
+
+```bash
+$ git clone git@github.com:BookBnB/users-service.git
+$ cd users-service
+$ docker-compose up -d
+```
+
+Luego para conectarse a la app:
+
+```bash
+$ docker-compose exec app bash
+```
+
+### Imagen
+
+Para crear una imagen de docker con el estado actual de la aplicación se debe ejecutar:
+
+```bash
+$ docker/build_production_image.sh
+```
+
+Esto creará una imagen con el tag `users-service:latest`.
+
+### Despliegue
+
+Luego para desplegar la imagen en Heroku:
+
+```bash
+$ docker/heroku_push.sh
+```
+
+Es necesario que para ello se encuentre configurada la variable de ambiente `$TRAVIS_BRANCH` indicando la rama que se desea desplegar.
+
+### Ejecución
+
+Para ejecutar la aplicación:
+
+```bash
+$ ./run.sh
+```
+
+### Tests
+
+Para ejecutar los tests:
+
+```bash
+$ python -m pytest tests
+```
+
+## Configuración
+
+Se deben configurar las siguientes variables de ambiente:
+
+| variable                  | descripción                                                               |
+|----------                 |-------------                                                              |
+| DATABASE_URL              | Url de conexión a la base de datos                                        |
+| SECRET_KEY                | Clave random para generar tokens                                          |
+| BACKOFFICE_URL            | Url del front-end del backoffice                                          |
+| SESSION_TOKEN_DURATION    | Duración del token de sesión                                              |
+| GOOGLE_CLIENT_ID          | Id de aplicación de Google                                                |
+| MAIL_USERNAME             | Dirección email para recuperación de contraseña                           |
+| MAIL_PASSWORD             | Contraseña del email de recuperación                                      |
+| MAIL_DEFAULT_SENDER       | Dirección default de donde enviar correos de recuperación                 |
+| MAIL_SERVER               | Dirección del servidor SMTP (Default: smtp.google.com)                    |
+| MAIL_PORT                 | Puerto del servidor SMTP (Default: 465)                                   |
+| MAIL_USE_SSL              | Indica si usar SSL al comunicarse con el servidor SMTP (Default: True)    |
+
+## Cobertura
+
+El proyecto fue testeado a través del módulo pytest, logrando una cobertura mayor al 90%. Se puede ver el detalle de los reportes en [codecov](https://codecov.io/gh/BookBnB/users-service).
+
+<img alt="Pruebas" src="https://codecov.io/gh/BookBnB/users-service/branch/develop/graph/sunburst.svg" style={{margin: '15px auto', display: 'flex'}}/>
+
+## OpenApi
+
+Puede consultarse la especificación OpenApi en [api.json](https://users-service-master.herokuapp.com/v1/api.json) o utilizando swagger en [api-docs](https://users-service-master.herokuapp.com/v1/api-docs).
+
+<iframe src="https://users-service-master.herokuapp.com/v1/api-docs" frameBorder="0" allowFullScreen
+        style={{width: '100%', height: '500px'}}/>
