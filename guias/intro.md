@@ -4,4 +4,4 @@ title: Introducción
 slug: /
 ---
 
-Algo sobre las guías
+Guías de usuario para la aplicación Android y React.
