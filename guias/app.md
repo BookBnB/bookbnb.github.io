@@ -13,7 +13,7 @@ La aplicación de BookBnB es abierta a todo público y será accedida en un futu
 ### Login
 Lo primero que se observa al abrir la APP es la pantalla de "Login" mediante la cual tenemos opción de ingresar nuestras credenciales usuario/contraseña, ingresar con google, recuperar la contraseña y registrar un nuevo usuario.
 
-<img alt="App Login" src={baseUrl('img/guias/app/login.png')} />
+<img alt="App Login" style="margin:auto; display:flex;" src={baseUrl('img/guias/app/login.png')} />
 
 ### Registro
 
