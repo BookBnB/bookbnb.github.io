@@ -12,5 +12,31 @@ La aplicación de BookBnB es abierta a todo público y será accedida en un futu
 
 ### Login
 Lo primero que se observa al abrir la APP es la pantalla de "Login" mediante la cual tenemos opción de ingresar nuestras credenciales usuario/contraseña, ingresar con google, recuperar la contraseña y registrar un nuevo usuario.
-![imagen](https://user-images.githubusercontent.com/37342068/110820784-2ee97f80-826e-11eb-8f94-fec5e0ac5559.png)
+
+<img alt="Backoffice Cerrar Sesión" src={baseUrl('img/guias/app/login.png')} />
+
+### Registro
+
+El registro de usuario puede darse tanto manualmente como con Google. La diferencia es que con Google se nos pregunta únicamente si queremos ser anfitriones o huespedes mientras que el registro manual nos ofrece la posibilidad de ingresar un teléfono y una ciudad.
+
+<img alt="Backoffice Cerrar Sesión" src={baseUrl('img/guias/app/registro.png')} />
+<img alt="Backoffice Cerrar Sesión" src={baseUrl('img/guias/app/registro_google.png')} />
+
+### Home Huesped
+
+Para un huesped, tenemos una Home que permite explorar publicaciones o ver recomendaciones.
+
+<img alt="Backoffice Cerrar Sesión" src={baseUrl('img/guias/app/home_huesped.png')} />
+
+### Home Anfitrión
+
+La Home del anfitrión es su lista de publicaciones, donde podrá ver los datos básicos o crear una nueva.
+
+<img alt="Backoffice Cerrar Sesión" src={baseUrl('img/guias/app/home_anfitrion.png')} />
+
+### Navegación
+
+Se tiene un menú lateral mediante el cuál se puede acceder a las diversas secciones de la APP como "Mensajes", "Perfil", etc. asi como cerrar sesión.
+
+<img alt="Backoffice Cerrar Sesión" src={baseUrl('img/guias/app/menu_lateral.png')} />
 
