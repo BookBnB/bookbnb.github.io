@@ -45,3 +45,54 @@ Se tiene un menú lateral mediante el cuál se puede acceder a las diversas secc
 Como huesped podemos realizar búsquedas de publicaciones para poder observar sus detalles según tipo de alojamiento, ubicación, fecha de checkin y checkout, precio y cantidad de huespedes.
 
 <img style={{margin: '15px auto', display: 'flex'}} alt="App Navegación" src={baseUrl('img/guias/app/busqueda.png')} />
+
+En la pantalla de resultados se podrá seleccionar la publicación elegida para ver su detalle.
+
+### Detalle Publicación Huesped
+
+En el detalle de una publicación, al ingresar como huesped, podremos realizar reservas, enviar preguntas, ver calificaciones, ver el perfil del anfitrión y chatear con el mismo.
+
+<img style={{margin: '15px auto', display: 'flex'}} alt="App Navegación" src={baseUrl('img/guias/app/detalle_publicacion_huesped.png')} />
+
+### Reservar
+
+Para reservar publicación debemos clickear el botón de "RESERVAR" y elegir una fecha de check in y una de check out. Recordar que para reservar el huesped debe tener el saldo correspondiente en su billetera, de lo contrario la reserva se rechazará automáticamente.
+
+<img style={{margin: '15px auto', display: 'flex'}} alt="App Navegación" src={baseUrl('img/guias/app/reservar.png')} />
+
+### Consultas Públicas
+
+Podemos realizar preguntas públicas para un alojamiento desde su detalle, las mismas serán anónimas, podrán ser vistas por todos los demás huespedes y podremos ver su respuesta cuando el anfitrión la realice.
+
+<img style={{margin: '15px auto', display: 'flex'}} alt="App Navegación" src={baseUrl('img/guias/app/preguntar.png')} />
+
+### Consultas Privadas
+
+A su vez, podemos iniciar un chat con un anfitrión para realizarle las consultas de manera privada.
+
+<img style={{margin: '15px auto', display: 'flex'}} alt="App Navegación" src={baseUrl('img/guias/app/chat.png')} />
+
+### Reservas Huesped
+
+Un huesped puede ver sus reservas con sus respectivos datos, que se encontrarán divididas en "Próximas" y "Anteriores". Dentro de esto, las reservas que aún no hayan pasado podrán ser canceladas y se podrán calificar aquellas reservas aceptadas y finalizadas.
+
+<img style={{margin: '15px auto', display: 'flex'}} alt="App Navegación" src={baseUrl('img/guias/app/mis_reservas.png')} />
+
+### Crear Publicación Anfitrión
+
+Un anfitrión podrá crear una publicación seleccionando primero sus datos básicos (cantidad de huespedes máxima, tipo de alojamiento, precio por noche, título y descripción). Luego seleccionará su ubicación que corroborará en un mapa. En el tercer paso elegirá las fotos de su alojamiento y por último confirmará la creación.
+
+<img style={{margin: '15px auto', display: 'flex'}} alt="App Navegación" src={baseUrl('img/guias/app/crear_publicacion.png')} />
+
+### Notificaciones
+
+Se podrá recibir notificaciones para los cambios de estado en las reservas y los mensajes privados.
+
+<img style={{margin: '15px auto', display: 'flex'}} alt="App Navegación" src={baseUrl('img/guias/app/notificacion.png')} />
+
+
+### Responder Preguntas Públicas
+
+Los anfitriones tendrán la posibilidad, desde el detalle de una publicación, de responder las preguntas públicas que se les realicen.
+
+<img style={{margin: '15px auto', display: 'flex'}} alt="App Navegación" src={baseUrl('img/guias/app/responder_pregunta.png')} />
