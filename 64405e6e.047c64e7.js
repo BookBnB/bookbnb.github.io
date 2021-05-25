@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[19],{85:function(a){a.exports=JSON.parse('{"allTagsPath":"/bitacora/tags","slug":"python","name":"python","count":1,"permalink":"/bitacora/tags/python"}')}}]);

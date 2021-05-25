@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{80:function(a){a.exports=JSON.parse('{"allTagsPath":"/bitacora/tags","slug":"retro","name":"retro","count":1,"permalink":"/bitacora/tags/retro"}')}}]);
